@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct ExpensesApp: App {
+struct ExpensesManagerApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()

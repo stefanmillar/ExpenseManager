@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E21A4B4C2788D3A000326719 /* ExpensesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A4B4B2788D3A000326719 /* ExpensesApp.swift */; };
+		E21A4B4C2788D3A000326719 /* ExpenseManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A4B4B2788D3A000326719 /* ExpenseManagerApp.swift */; };
 		E21A4B4E2788D3A000326719 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A4B4D2788D3A000326719 /* ExpensesView.swift */; };
 		E21A4B502788D3A400326719 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E21A4B4F2788D3A400326719 /* Assets.xcassets */; };
 		E21A4B532788D3A400326719 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E21A4B522788D3A400326719 /* Preview Assets.xcassets */; };
@@ -19,8 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E21A4B482788D3A000326719 /* Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E21A4B4B2788D3A000326719 /* ExpensesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesApp.swift; sourceTree = "<group>"; };
+		E21A4B482788D3A000326719 /* ExpenseManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E21A4B4B2788D3A000326719 /* ExpenseManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseManagerApp.swift; sourceTree = "<group>"; };
 		E21A4B4D2788D3A000326719 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
 		E21A4B4F2788D3A400326719 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E21A4B522788D3A400326719 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		E21A4B492788D3A000326719 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E21A4B482788D3A000326719 /* Expenses.app */,
+				E21A4B482788D3A000326719 /* ExpenseManager.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,7 +63,7 @@
 			children = (
 				E24C34FA2790BFD9000CBD94 /* Views */,
 				E21A4B59278CDFF800326719 /* Models */,
-				E21A4B4B2788D3A000326719 /* ExpensesApp.swift */,
+				E21A4B4B2788D3A000326719 /* ExpenseManagerApp.swift */,
 				E21A4B4F2788D3A400326719 /* Assets.xcassets */,
 				E21A4B512788D3A400326719 /* Preview Content */,
 			);
@@ -115,7 +115,7 @@
 			);
 			name = Expenses;
 			productName = Expenses;
-			productReference = E21A4B482788D3A000326719 /* Expenses.app */;
+			productReference = E21A4B482788D3A000326719 /* ExpenseManager.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -170,7 +170,7 @@
 			files = (
 				E21A4B4E2788D3A000326719 /* ExpensesView.swift in Sources */,
 				E2AB954027922E410047B9BB /* MainView.swift in Sources */,
-				E21A4B4C2788D3A000326719 /* ExpensesApp.swift in Sources */,
+				E21A4B4C2788D3A000326719 /* ExpenseManagerApp.swift in Sources */,
 				E21A4B5F278CE66300326719 /* TransactionView.swift in Sources */,
 				E24C34FC2790C171000CBD94 /* AddTransactionView.swift in Sources */,
 				E21A4B5B278CE07A00326719 /* Transaction.swift in Sources */,
@@ -317,8 +317,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Stefan-Millar.Expenses";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "Stefan-Millar.ExpenseManager";
+				PRODUCT_NAME = ExpenseManager;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -345,8 +345,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Stefan-Millar.Expenses";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "Stefan-Millar.ExpenseManager";
+				PRODUCT_NAME = ExpenseManager;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
