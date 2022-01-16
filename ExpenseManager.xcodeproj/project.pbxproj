@@ -45,7 +45,7 @@
 		E21A4B3F2788D3A000326719 = {
 			isa = PBXGroup;
 			children = (
-				E21A4B4A2788D3A000326719 /* Expenses */,
+				E21A4B4A2788D3A000326719 /* ExpenseManager */,
 				E21A4B492788D3A000326719 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,7 +58,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E21A4B4A2788D3A000326719 /* Expenses */ = {
+		E21A4B4A2788D3A000326719 /* ExpenseManager */ = {
 			isa = PBXGroup;
 			children = (
 				E24C34FA2790BFD9000CBD94 /* Views */,
@@ -67,7 +67,7 @@
 				E21A4B4F2788D3A400326719 /* Assets.xcassets */,
 				E21A4B512788D3A400326719 /* Preview Content */,
 			);
-			path = Expenses;
+			path = ExpenseManager;
 			sourceTree = "<group>";
 		};
 		E21A4B512788D3A400326719 /* Preview Content */ = {
@@ -101,9 +101,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E21A4B472788D3A000326719 /* Expenses */ = {
+		E21A4B472788D3A000326719 /* ExpenseManager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E21A4B562788D3A400326719 /* Build configuration list for PBXNativeTarget "Expenses" */;
+			buildConfigurationList = E21A4B562788D3A400326719 /* Build configuration list for PBXNativeTarget "ExpenseManager" */;
 			buildPhases = (
 				E21A4B442788D3A000326719 /* Sources */,
 				E21A4B452788D3A000326719 /* Frameworks */,
@@ -113,7 +113,7 @@
 			);
 			dependencies = (
 			);
-			name = Expenses;
+			name = ExpenseManager;
 			productName = Expenses;
 			productReference = E21A4B482788D3A000326719 /* ExpenseManager.app */;
 			productType = "com.apple.product-type.application";
@@ -133,7 +133,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E21A4B432788D3A000326719 /* Build configuration list for PBXProject "Expenses" */;
+			buildConfigurationList = E21A4B432788D3A000326719 /* Build configuration list for PBXProject "ExpenseManager" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -146,7 +146,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E21A4B472788D3A000326719 /* Expenses */,
+				E21A4B472788D3A000326719 /* ExpenseManager */,
 			);
 		};
 /* End PBXProject section */
@@ -304,7 +304,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Expenses/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ExpenseManager/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -332,7 +332,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Expenses/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ExpenseManager/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -356,7 +356,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E21A4B432788D3A000326719 /* Build configuration list for PBXProject "Expenses" */ = {
+		E21A4B432788D3A000326719 /* Build configuration list for PBXProject "ExpenseManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E21A4B542788D3A400326719 /* Debug */,
@@ -365,7 +365,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E21A4B562788D3A400326719 /* Build configuration list for PBXNativeTarget "Expenses" */ = {
+		E21A4B562788D3A400326719 /* Build configuration list for PBXNativeTarget "ExpenseManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E21A4B572788D3A400326719 /* Debug */,
