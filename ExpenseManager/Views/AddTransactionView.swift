@@ -13,6 +13,10 @@ struct AddTransactionView: View {
     @State private var date = Date()
     @State private var type = TransactionType.Expense
     
+    @State private var showAlert = false
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
+    
     @Binding var transactions: [Transaction]
     
     var amountFormatted: Double {
@@ -25,7 +29,6 @@ struct AddTransactionView: View {
     }
     
     var body: some View {
-        
         VStack (spacing: 0) {
             
             VStack {
@@ -113,20 +116,45 @@ struct AddTransactionView: View {
                     
                 }
                 .background(Color.white)
-                
-                
+
             }
             
+        }.alert(isPresented: $showAlert) {
+            Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
         }
     }
     
+    /**
+     Adds a new transaction to the local list and firebase database
+     */
     func NewTransaction() {
+        let firebase = FirebaseDB()
         
-        // Add the new transaction
-        transactions.insert(Transaction(amount: amountFormatted, category: category, date: date, type: type), at: 0)
+        // Try to add the transaction to the database
+        if !firebase.AddTransaction(amount: amountFormatted, date: date, category: category.asString, type: type.asString) {
+            
+            alertTitle = "Error"
+            alertMessage = "Could not add transaction."
+        } else {
+            
+            // Add the new transaction to the local list
+            transactions.insert(Transaction(amount: amountFormatted, category: category, date: date, type: type), at: 0)
+            
+            // Sort the transactions by date
+            transactions = transactions.sorted(by: { $0.date.compare($1.date) == .orderedDescending })
+            
+            // Set alert message
+            alertTitle = "Success"
+            alertMessage = "Transaction added"
+            
+            // Reset default values
+            amount = ""
+            category = Category.salary
+            date = Date()
+            type = TransactionType.Expense
+        }
         
-        // Sort the transactions by date
-        transactions = transactions.sorted(by: { $0.date.compare($1.date) == .orderedDescending })
+        showAlert = true
     }
 }
 

@@ -83,7 +83,7 @@ struct ExpensesView: View {
                                 .font(.caption)
                                 .foregroundColor(.white)
                         }
-                        Text("\(expenseTotal, specifier: "- $%.2f")")
+                        Text("\(expenseTotal, specifier: "$%.2f")")
                             .foregroundColor(.white)
                     }
                     Spacer()

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Transaction: Identifiable {
+struct Transaction: Identifiable, Codable {
     let id: UUID
     var amount: Double
     var category: Category
@@ -23,7 +23,7 @@ struct Transaction: Identifiable {
     }
 }
 
-enum TransactionType: CaseIterable {
+enum TransactionType: CaseIterable, Codable {
     case Expense
     case Income
     

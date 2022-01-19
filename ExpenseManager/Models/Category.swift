@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum Category: CaseIterable {
+enum Category: CaseIterable, Codable {
     
 case salary
 case bonus
