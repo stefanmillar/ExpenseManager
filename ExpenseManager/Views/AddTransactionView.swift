@@ -1,6 +1,6 @@
 //
 //  AddTransactionView.swift
-//  Expenses
+//  ExpenseManager
 //
 //  Created by Stefan Millar on 2022-01-13.
 //
@@ -17,15 +17,15 @@ struct AddTransactionView: View {
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     
-    @Binding var transactions: [Transaction]
+    @Binding var user: ExpenseUser
     
     var amountFormatted: Double {
         return (Double(amount) ?? 0) / 100
     }
     
-    init(transactions: Binding<[Transaction]>) {
+    init(user: Binding<ExpenseUser>) {
         UITableView.appearance().backgroundColor = .clear
-        self._transactions = transactions
+        self._user = user
     }
     
     var body: some View {
@@ -91,28 +91,30 @@ struct AddTransactionView: View {
                         
                     }
                     
-                    Section {
-                        Button(action: NewTransaction) {
-                            
-                            HStack {
-                                Spacer()
-                                
-                                Label("Create", systemImage: "plus.circle.fill")
-                                    .foregroundColor(.green)
-                                
-                                Spacer()
-                            }
-                            .padding()
-                            
-                            
-                        }
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color(UIColor.systemGray4), lineWidth: 3)
-                        )
+                    ZStack {
                         
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(.green)
+                            .opacity(0.9)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .padding(.horizontal, 4)
+                            .shadow(color: Color.black, radius: 1, x: 1, y: 1)
+                        
+                        Section {
+                            HStack {
+                                
+                                Button(action: newTransaction) {
+                                    Label("Create", systemImage: "plus.circle")
+                                        .foregroundColor(.white)
+                                }
+                                .padding()
+                                
+                            }
+                        }
                         
                     }
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.clear)
                     
                 }
                 .background(Color.white)
@@ -127,21 +129,18 @@ struct AddTransactionView: View {
     /**
      Adds a new transaction to the local list and firebase database
      */
-    func NewTransaction() {
+    func newTransaction() {
         let firebase = FirebaseDB()
         
         // Try to add the transaction to the database
-        if !firebase.AddTransaction(amount: amountFormatted, date: date, category: category.asString, type: type.asString) {
+        if !firebase.addTransaction(amount: amountFormatted, date: date, category: category.asString, type: type.asString, userID: user.uid) {
             
             alertTitle = "Error"
             alertMessage = "Could not add transaction."
         } else {
             
             // Add the new transaction to the local list
-            transactions.insert(Transaction(amount: amountFormatted, category: category, date: date, type: type), at: 0)
-            
-            // Sort the transactions by date
-            transactions = transactions.sorted(by: { $0.date.compare($1.date) == .orderedDescending })
+            user.transactions.insert(Transaction(amount: amountFormatted, category: category, date: date, type: type), at: 0)
             
             // Set alert message
             alertTitle = "Success"
@@ -160,6 +159,6 @@ struct AddTransactionView: View {
 
 struct AddTransactionView_Previews: PreviewProvider {
     static var previews: some View {
-        AddTransactionView(transactions: .constant(Transaction.sample))
+        AddTransactionView(user: .constant(ExpenseUser.sample))
     }
 }

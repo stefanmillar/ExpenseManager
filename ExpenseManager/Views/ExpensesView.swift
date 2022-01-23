@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Expenses
+//  ExpenseManager
 //
 //  Created by Stefan Millar on 2022-01-07.
 //
@@ -35,6 +35,10 @@ struct ExpensesView: View {
     
     var balance: Double {
         return incomeTotal - expenseTotal
+    }
+    
+    var transactionsSorted: [Transaction] {
+        return transactions.sorted(by: { $0.date.compare($1.date) == .orderedDescending })
     }
     
     var body: some View {
@@ -95,7 +99,7 @@ struct ExpensesView: View {
             
             // List of transactions
             List {
-                ForEach (transactions) { trans in
+                ForEach (transactionsSorted) { trans in
                     TransactionView(transaction: trans)
                 }
                 .listRowBackground(Color.white)

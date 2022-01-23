@@ -16,6 +16,8 @@
 		E21A4B5F278CE66300326719 /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A4B5E278CE66300326719 /* TransactionView.swift */; };
 		E24C34FC2790C171000CBD94 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24C34FB2790C171000CBD94 /* AddTransactionView.swift */; };
 		E24C6C122798C09D009DC72D /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24C6C112798C09C009DC72D /* AuthView.swift */; };
+		E24C6C142799FFFC009DC72D /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24C6C132799FFFC009DC72D /* CreateAccountView.swift */; };
+		E24C6C18279B4BFC009DC72D /* ExpenseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24C6C17279B4BFC009DC72D /* ExpenseUser.swift */; };
 		E2AB954027922E410047B9BB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AB953F27922E400047B9BB /* MainView.swift */; };
 		E2AB9564279613130047B9BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2AB9563279613130047B9BB /* GoogleService-Info.plist */; };
 		E2AB95672796153E0047B9BB /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E2AB95662796153E0047B9BB /* FirebaseAnalytics */; };
@@ -38,6 +40,8 @@
 		E21A4B5E278CE66300326719 /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
 		E24C34FB2790C171000CBD94 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
 		E24C6C112798C09C009DC72D /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		E24C6C132799FFFC009DC72D /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		E24C6C17279B4BFC009DC72D /* ExpenseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseUser.swift; sourceTree = "<group>"; };
 		E2AB953F27922E400047B9BB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E2AB9563279613130047B9BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E2AB957227961C390047B9BB /* FirebaseDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDB.swift; sourceTree = "<group>"; };
@@ -79,10 +83,10 @@
 		E21A4B4A2788D3A000326719 /* ExpenseManager */ = {
 			isa = PBXGroup;
 			children = (
+				E21A4B4B2788D3A000326719 /* ExpenseManagerApp.swift */,
 				E2AB9563279613130047B9BB /* GoogleService-Info.plist */,
 				E24C34FA2790BFD9000CBD94 /* Views */,
 				E21A4B59278CDFF800326719 /* Models */,
-				E21A4B4B2788D3A000326719 /* ExpenseManagerApp.swift */,
 				E21A4B4F2788D3A400326719 /* Assets.xcassets */,
 				E21A4B512788D3A400326719 /* Preview Content */,
 			);
@@ -103,6 +107,7 @@
 				E21A4B5A278CE07A00326719 /* Transaction.swift */,
 				E21A4B5C278CE0BB00326719 /* Category.swift */,
 				E2AB957227961C390047B9BB /* FirebaseDB.swift */,
+				E24C6C17279B4BFC009DC72D /* ExpenseUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 				E2AB953F27922E400047B9BB /* MainView.swift */,
 				E2AB957427976EB50047B9BB /* SignInView.swift */,
 				E24C6C112798C09C009DC72D /* AuthView.swift */,
+				E24C6C132799FFFC009DC72D /* CreateAccountView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E24C6C142799FFFC009DC72D /* CreateAccountView.swift in Sources */,
 				E2AB957527976EB60047B9BB /* SignInView.swift in Sources */,
 				E21A4B4E2788D3A000326719 /* ExpensesView.swift in Sources */,
 				E2AB954027922E410047B9BB /* MainView.swift in Sources */,
@@ -211,6 +218,7 @@
 				E24C34FC2790C171000CBD94 /* AddTransactionView.swift in Sources */,
 				E21A4B5B278CE07A00326719 /* Transaction.swift in Sources */,
 				E21A4B5D278CE0BB00326719 /* Category.swift in Sources */,
+				E24C6C18279B4BFC009DC72D /* ExpenseUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,6 @@
 //
 //  TransactionView.swift
-//  Expenses
+//  ExpenseManager
 //
 //  Created by Stefan Millar on 2022-01-10.
 //

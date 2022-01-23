@@ -6,17 +6,23 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct AuthView: View {
-    @State var isAuthenticated = false
+    @State var isAuthenticated = (Auth.auth().currentUser != nil)
     
     var body: some View {
         if isAuthenticated {
             MainView()
         } else {
-            SignInView(isAuthenticated: $isAuthenticated)
+            NavigationView() {
+                SignInView(isAuthenticated: $isAuthenticated)
+            }
+            .navigationTitle("Log In")
         }
     }
+    
+    
 }
 
 struct AuthView_Previews: PreviewProvider {

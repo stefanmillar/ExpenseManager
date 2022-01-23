@@ -1,13 +1,16 @@
 //
 //  Transaction.swift
-//  Expenses
+//  ExpenseManager
 //
 //  Created by Stefan Millar on 2022-01-10.
 //
 
 import Foundation
 
-struct Transaction: Identifiable, Codable {
+/**
+ A struct representation of a transaction
+ */
+struct Transaction: Identifiable {
     let id: UUID
     var amount: Double
     var category: Category
@@ -23,14 +26,28 @@ struct Transaction: Identifiable, Codable {
     }
 }
 
-enum TransactionType: CaseIterable, Codable {
+/**
+ An enum representing either the expense or income transaction type
+ */
+enum TransactionType: CaseIterable {
     case Expense
     case Income
+    
+    case error
     
     var asString: String {
         switch self {
         case .Expense: return "Expense"
         case .Income: return "Income"
+        case .error: return "Error"
+        }
+    }
+    
+    static func asType(type: String) -> TransactionType {
+        switch type {
+        case "Expense": return .Expense
+        case "Income": return .Income
+        default: return .error
         }
     }
 }

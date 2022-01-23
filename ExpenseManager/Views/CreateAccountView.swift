@@ -1,27 +1,24 @@
 //
-//  SignInView.swift
+//  CreateAccountView.swift
 //  ExpenseManager
 //
-//  Created by Stefan Millar on 2022-01-18.
+//  Created by Stefan Millar on 2022-01-20.
 //
 
 import SwiftUI
 import Firebase
 
-struct SignInView: View {
-    @State var email: String = ""
-    @State var password: String = ""
-    @State var isSignedIn = false
+struct CreateAccountView: View {
+    @State var newEmail: String = ""
+    @State var newPassword: String = ""
+    @State var newName: String = ""
     
     @State var alertTitle = ""
     @State var alertMessage = ""
     @State var showAlert = false
     
-    @Binding var isAuthenticated: Bool
-    
-    init(isAuthenticated: Binding<Bool>) {
+    init() {
         UITableView.appearance().backgroundColor = .clear
-        self._isAuthenticated = isAuthenticated
     }
     
     var body: some View {
@@ -36,7 +33,7 @@ struct SignInView: View {
                 Section(header: Color.clear) {
                     HStack {
                         Spacer()
-                        Text("Log In")
+                        Text("Create Account")
                             .foregroundColor(.white)
                             .font(.largeTitle)
                         Spacer()
@@ -45,32 +42,27 @@ struct SignInView: View {
                 .listRowBackground(Color.clear)
                 
                 Section {
-                    TextField("Email", text: $email)
+                    TextField("Email", text: $newEmail)
                         .font(.largeTitle)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
                 .listRowBackground(Color.clear)
                 
                 Section {
-                    VStack {
-                        SecureField("Password", text: $password)
-                            .font(.largeTitle)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                        
-                        NavigationLink(destination: CreateAccountView()) {
-                            Text("Create Account")
-                                .foregroundColor(.blue)
-                        }
-                        .padding(.top, 10)
-                    }
+                    
+                    SecureField("Password", text: $newPassword)
+                        .font(.largeTitle)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    
                 }
                 .listRowBackground(Color.clear)
                 
                 Section {
-                    //NavigationView {
-                    
-                    //}
+                    TextField("Name", text: $newName)
+                        .font(.largeTitle)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
+                .listRowBackground(Color.clear)
                 
                 ZStack {
                     
@@ -84,8 +76,8 @@ struct SignInView: View {
                     Section {
                         HStack {
                             
-                            Button(action: signIn) {
-                                Label("Sign In", systemImage: "iphone.and.arrow.forward")
+                            Button(action: createAccount) {
+                                Label("Create", systemImage: "person.fill")
                                     .foregroundColor(.white)
                             }
                             .padding()
@@ -105,31 +97,23 @@ struct SignInView: View {
             Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
         }
         
-        
     }
     
-    /**
-     Signs the user in using firebase authentication
-     */
-    func signIn() {
-        
-        // Sign the user in by calling firebase auth
-        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-            
-            // If not successful, show alert message
+    func createAccount() {
+        Auth.auth().createUser(withEmail: newEmail, password: newPassword) { authResult, error in
             if error != nil {
-                alertTitle = "Invalid"
+                alertTitle = "Error"
                 alertMessage = error?.localizedDescription ?? ""
                 showAlert = true
             } else {
-                isAuthenticated = true
+                
             }
         }
     }
 }
 
-struct SignInView_Previews: PreviewProvider {
+struct CreateAccountView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView(isAuthenticated: .constant(false))
+        CreateAccountView()
     }
 }

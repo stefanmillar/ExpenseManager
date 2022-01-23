@@ -1,6 +1,6 @@
 //
 //  Category.swift
-//  Expenses
+//  ExpenseManager
 //
 //  Created by Stefan Millar on 2022-01-10.
 //
@@ -8,7 +8,10 @@
 import Foundation
 import SwiftUI
 
-enum Category: CaseIterable, Codable {
+/**
+ An enum representing a transaction category.
+ */
+enum Category: CaseIterable {
     
 case salary
 case bonus
@@ -21,6 +24,8 @@ case investment
 case car
 case phone
 case medical
+    
+case error
     
     var asString: String {
         switch self {
@@ -35,6 +40,24 @@ case medical
         case .car: return "Car"
         case .phone: return "Phone"
         case .medical: return "Medical"
+        case .error: return "Error"
+        }
+    }
+    
+    static func asCategory(category: String) -> Category {
+        switch category {
+        case "Salary": return .salary
+        case "Bonus": return .bonus
+        case "Investment Return": return .investmentReturn
+            
+        case "Food": return .food
+        case "Entertainment": return .entertainment
+        case "Living": return .living
+        case "Investment": return .investment
+        case "Car": return .car
+        case "Phone": return .phone
+        case "Medical": return .medical
+        default: return .error
         }
     }
     
@@ -60,6 +83,8 @@ case medical
             return (icon: "phone.circle.fill", background: Color.brown)
         case .medical:
             return (icon: "heart.circle.fill", background: Color.red)
+        case .error:
+            return (icon: "xmark.octagon.fill", background: Color.red)
         }
     }
 }

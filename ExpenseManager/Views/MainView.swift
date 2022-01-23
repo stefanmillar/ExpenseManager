@@ -1,30 +1,32 @@
 //
 //  MainView.swift
-//  Expenses
+//  ExpenseManager
 //
 //  Created by Stefan Millar on 2022-01-14.
 //
 
 import SwiftUI
+import Firebase
 
 struct MainView: View {
-    @State var transactions: [Transaction]
-    
-    init() {
-        transactions = [Transaction]()
-    }
+    @State var user: ExpenseUser = ExpenseUser(uid: "", name: "", email: "", transactions: [Transaction]())
     
     var body: some View {
         TabView {
-            ExpensesView(transactions: self.$transactions)
+            ExpensesView(transactions: self.$user.transactions)
                 .tabItem {
                     Label("Transactions", systemImage: "list.bullet")
                 }
             
-            AddTransactionView(transactions: self.$transactions)
+            AddTransactionView(user: self.$user)
                 .tabItem {
                     Label("", systemImage: "plus.app")
                 }
+        }
+        .task {
+            let firebase = FirebaseDB()
+            user = await firebase.getUser(userID: Auth.auth().currentUser?.uid ?? "")
+            print("TEST \(user.email)")
         }
     }
 }
