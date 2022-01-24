@@ -68,7 +68,9 @@ struct AddTransactionView: View {
                         
                         Picker("Category", selection: $category) {
                             ForEach(Category.allCases, id: \.self) { cat in
-                                Text(cat.asString)
+                                if cat != Category.error {
+                                    Text(cat.asString)
+                                }
                             }
                         }
                         
@@ -85,7 +87,9 @@ struct AddTransactionView: View {
                     Section {
                         Picker("Type", selection: $type) {
                             ForEach(TransactionType.allCases, id: \.self) { typ in
-                                Text(typ.asString)
+                                if typ != TransactionType.error {
+                                    Text(typ.asString)
+                                }
                             }
                         }
                         

@@ -26,7 +26,6 @@ struct MainView: View {
         .task {
             let firebase = FirebaseDB()
             user = await firebase.getUser(userID: Auth.auth().currentUser?.uid ?? "")
-            print("TEST \(user.email)")
         }
     }
 }

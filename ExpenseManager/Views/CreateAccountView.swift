@@ -17,8 +17,11 @@ struct CreateAccountView: View {
     @State var alertMessage = ""
     @State var showAlert = false
     
-    init() {
+    @Binding var rootActive: Bool
+    
+    init(rootActive: Binding<Bool>) {
         UITableView.appearance().backgroundColor = .clear
+        self._rootActive = rootActive
     }
     
     var body: some View {
@@ -94,19 +97,38 @@ struct CreateAccountView: View {
             
         }
         .alert(isPresented: $showAlert) {
-            Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+            Alert(
+                title: Text(alertTitle),
+                message: Text(alertMessage),
+                dismissButton: .default(Text("OK")) {
+                    rootActive = false
+                }
+            )
         }
         
     }
     
     func createAccount() {
+        let firebase = FirebaseDB()
+        
+        // Create user is authentication storage
         Auth.auth().createUser(withEmail: newEmail, password: newPassword) { authResult, error in
             if error != nil {
                 alertTitle = "Error"
                 alertMessage = error?.localizedDescription ?? ""
                 showAlert = true
-            } else {
                 
+            // Create user in firestore
+            } else if !firebase.createUser(email: newEmail, name: newName, userID: authResult?.user.uid ?? "err") {
+                    alertTitle = "Error"
+                    alertMessage = "Error adding user to firestore"
+                    showAlert = true
+            } else {
+                alertTitle = "Success"
+                alertMessage = "User created"
+                showAlert = true
+                
+                print("User \(authResult?.user.uid ?? "") created")
             }
         }
     }
@@ -114,6 +136,6 @@ struct CreateAccountView: View {
 
 struct CreateAccountView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateAccountView()
+        CreateAccountView(rootActive: .constant(false))
     }
 }

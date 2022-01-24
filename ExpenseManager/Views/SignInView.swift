@@ -12,6 +12,7 @@ struct SignInView: View {
     @State var email: String = ""
     @State var password: String = ""
     @State var isSignedIn = false
+    @State var isActive = false
     
     @State var alertTitle = ""
     @State var alertMessage = ""
@@ -57,7 +58,7 @@ struct SignInView: View {
                             .font(.largeTitle)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                         
-                        NavigationLink(destination: CreateAccountView()) {
+                        NavigationLink(destination: CreateAccountView(rootActive: $isActive), isActive: $isActive) {
                             Text("Create Account")
                                 .foregroundColor(.blue)
                         }
@@ -67,9 +68,6 @@ struct SignInView: View {
                 .listRowBackground(Color.clear)
                 
                 Section {
-                    //NavigationView {
-                    
-                    //}
                 }
                 
                 ZStack {

@@ -21,7 +21,7 @@ class FirebaseDB {
         var ref: DocumentReference? = nil
         var wasAdded = true
         
-        ref = db.collection("users").document(userID).collection("Transactions").addDocument(data: [
+        ref = db.collection("users").document(userID).collection("transactions").addDocument(data: [
             "amount": amount,
             "date": date,
             "category": category,
@@ -57,14 +57,14 @@ class FirebaseDB {
             let email = data?["email"] as! String
             let name = data?["name"] as! String
             
-            let tranDoc = try? await ref?.collection("Transactions").getDocuments()
+            let tranDoc = try? await ref?.collection("transactions").getDocuments()
             
             user = ExpenseUser(uid: userID, name: name, email: email, transactions: [Transaction]())
             
             // Retrieve transactions data
             if !(tranDoc?.isEmpty ?? false) {
                 
-                // Add the transactions
+                // Add the transactions to the local list
                 for doc in tranDoc!.documents {
                     let tran = doc.data()
                 
@@ -79,8 +79,29 @@ class FirebaseDB {
             print("Error retrieving document")
         }
         
-        
         return user
+    }
+    
+    /**
+     Adds a new user to the database
+     */
+    func createUser(email: String, name: String, userID: String) -> Bool {
+        var wasCreated = true
+        
+        db.collection("users").document(userID).setData([
+            "email": email,
+            "name": name
+        ]) { err in
+            if err != nil {
+                wasCreated = false
+                print("Error creating user")
+            } else {
+                print("User \(userID) created in database")
+            }
+            
+        }
+        
+        return wasCreated
     }
 }
 
