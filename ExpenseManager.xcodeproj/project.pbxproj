@@ -27,6 +27,9 @@
 		E2AB956F2796153E0047B9BB /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = E2AB956E2796153E0047B9BB /* FirebaseFirestoreSwift-Beta */; };
 		E2AB957327961C390047B9BB /* FirebaseDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AB957227961C390047B9BB /* FirebaseDB.swift */; };
 		E2AB957527976EB60047B9BB /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AB957427976EB50047B9BB /* SignInView.swift */; };
+		E2E39E6927A355B100C1638E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E39E6827A355B100C1638E /* ProfileView.swift */; };
+		E2E39E6C27A4A18100C1638E /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = E2E39E6B27A4A18100C1638E /* SwiftUICharts */; };
+		E2E39E6E27A4A1BB00C1638E /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E39E6D27A4A1BB00C1638E /* InsightsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,8 @@
 		E2AB9563279613130047B9BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E2AB957227961C390047B9BB /* FirebaseDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDB.swift; sourceTree = "<group>"; };
 		E2AB957427976EB50047B9BB /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		E2E39E6827A355B100C1638E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		E2E39E6D27A4A1BB00C1638E /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,7 @@
 				E2AB95692796153E0047B9BB /* FirebaseAnalyticsSwift-Beta in Frameworks */,
 				E2AB956D2796153E0047B9BB /* FirebaseFirestore in Frameworks */,
 				E2AB956F2796153E0047B9BB /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				E2E39E6C27A4A18100C1638E /* SwiftUICharts in Frameworks */,
 				E2AB956B2796153E0047B9BB /* FirebaseAuth in Frameworks */,
 				E2AB95672796153E0047B9BB /* FirebaseAnalytics in Frameworks */,
 			);
@@ -122,6 +128,8 @@
 				E2AB957427976EB50047B9BB /* SignInView.swift */,
 				E24C6C112798C09C009DC72D /* AuthView.swift */,
 				E24C6C132799FFFC009DC72D /* CreateAccountView.swift */,
+				E2E39E6827A355B100C1638E /* ProfileView.swift */,
+				E2E39E6D27A4A1BB00C1638E /* InsightsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -148,6 +156,7 @@
 				E2AB956A2796153E0047B9BB /* FirebaseAuth */,
 				E2AB956C2796153E0047B9BB /* FirebaseFirestore */,
 				E2AB956E2796153E0047B9BB /* FirebaseFirestoreSwift-Beta */,
+				E2E39E6B27A4A18100C1638E /* SwiftUICharts */,
 			);
 			productName = Expenses;
 			productReference = E21A4B482788D3A000326719 /* ExpenseManager.app */;
@@ -179,6 +188,7 @@
 			mainGroup = E21A4B3F2788D3A000326719;
 			packageReferences = (
 				E2AB95652796153E0047B9BB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E2E39E6A27A4A18000C1638E /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = E21A4B492788D3A000326719 /* Products */;
 			projectDirPath = "";
@@ -208,9 +218,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E24C6C142799FFFC009DC72D /* CreateAccountView.swift in Sources */,
+				E2E39E6927A355B100C1638E /* ProfileView.swift in Sources */,
 				E2AB957527976EB60047B9BB /* SignInView.swift in Sources */,
 				E21A4B4E2788D3A000326719 /* ExpensesView.swift in Sources */,
 				E2AB954027922E410047B9BB /* MainView.swift in Sources */,
+				E2E39E6E27A4A1BB00C1638E /* InsightsView.swift in Sources */,
 				E2AB957327961C390047B9BB /* FirebaseDB.swift in Sources */,
 				E21A4B4C2788D3A000326719 /* ExpenseManagerApp.swift in Sources */,
 				E21A4B5F278CE66300326719 /* TransactionView.swift in Sources */,
@@ -429,6 +441,14 @@
 				kind = branch;
 			};
 		};
+		E2E39E6A27A4A18000C1638E /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -456,6 +476,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E2AB95652796153E0047B9BB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseFirestoreSwift-Beta";
+		};
+		E2E39E6B27A4A18100C1638E /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E2E39E6A27A4A18000C1638E /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

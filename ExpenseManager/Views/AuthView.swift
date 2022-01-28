@@ -13,7 +13,7 @@ struct AuthView: View {
     
     var body: some View {
         if isAuthenticated {
-            MainView()
+            MainView(isAuthenticated: self.$isAuthenticated)
         } else {
             NavigationView() {
                 SignInView(isAuthenticated: $isAuthenticated)
