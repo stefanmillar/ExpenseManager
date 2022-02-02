@@ -62,7 +62,6 @@ extension Transaction {
         Transaction(amount: 126.34, category: Category.bonus, date: Date.now, type: TransactionType.Income),
         Transaction(amount: 500.00, category: Category.car, date: Date.now, type: TransactionType.Expense),
         Transaction(amount: 26.00, category: Category.food, date: Date.now, type: TransactionType.Expense),
-        Transaction(amount: 126.34, category: Category.investment, date: Date.now, type: TransactionType.Expense),
         Transaction(amount: 500.00, category: Category.living, date: Date.now, type: TransactionType.Expense)
     ]
 }

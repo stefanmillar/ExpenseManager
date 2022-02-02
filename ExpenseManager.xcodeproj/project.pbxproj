@@ -28,8 +28,8 @@
 		E2AB957327961C390047B9BB /* FirebaseDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AB957227961C390047B9BB /* FirebaseDB.swift */; };
 		E2AB957527976EB60047B9BB /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AB957427976EB50047B9BB /* SignInView.swift */; };
 		E2E39E6927A355B100C1638E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E39E6827A355B100C1638E /* ProfileView.swift */; };
-		E2E39E6C27A4A18100C1638E /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = E2E39E6B27A4A18100C1638E /* SwiftUICharts */; };
 		E2E39E6E27A4A1BB00C1638E /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E39E6D27A4A1BB00C1638E /* InsightsView.swift */; };
+		E2E39E7127A5E45A00C1638E /* SwiftPieChart in Frameworks */ = {isa = PBXBuildFile; productRef = E2E39E7027A5E45A00C1638E /* SwiftPieChart */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,8 +60,8 @@
 			files = (
 				E2AB95692796153E0047B9BB /* FirebaseAnalyticsSwift-Beta in Frameworks */,
 				E2AB956D2796153E0047B9BB /* FirebaseFirestore in Frameworks */,
+				E2E39E7127A5E45A00C1638E /* SwiftPieChart in Frameworks */,
 				E2AB956F2796153E0047B9BB /* FirebaseFirestoreSwift-Beta in Frameworks */,
-				E2E39E6C27A4A18100C1638E /* SwiftUICharts in Frameworks */,
 				E2AB956B2796153E0047B9BB /* FirebaseAuth in Frameworks */,
 				E2AB95672796153E0047B9BB /* FirebaseAnalytics in Frameworks */,
 			);
@@ -156,7 +156,7 @@
 				E2AB956A2796153E0047B9BB /* FirebaseAuth */,
 				E2AB956C2796153E0047B9BB /* FirebaseFirestore */,
 				E2AB956E2796153E0047B9BB /* FirebaseFirestoreSwift-Beta */,
-				E2E39E6B27A4A18100C1638E /* SwiftUICharts */,
+				E2E39E7027A5E45A00C1638E /* SwiftPieChart */,
 			);
 			productName = Expenses;
 			productReference = E21A4B482788D3A000326719 /* ExpenseManager.app */;
@@ -188,7 +188,7 @@
 			mainGroup = E21A4B3F2788D3A000326719;
 			packageReferences = (
 				E2AB95652796153E0047B9BB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				E2E39E6A27A4A18000C1638E /* XCRemoteSwiftPackageReference "ChartView" */,
+				E2E39E6F27A5E45900C1638E /* XCRemoteSwiftPackageReference "SwiftPieChart" */,
 			);
 			productRefGroup = E21A4B492788D3A000326719 /* Products */;
 			projectDirPath = "";
@@ -441,9 +441,9 @@
 				kind = branch;
 			};
 		};
-		E2E39E6A27A4A18000C1638E /* XCRemoteSwiftPackageReference "ChartView" */ = {
+		E2E39E6F27A5E45900C1638E /* XCRemoteSwiftPackageReference "SwiftPieChart" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AppPear/ChartView";
+			repositoryURL = "https://github.com/ilamanov/SwiftPieChart";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
@@ -477,10 +477,10 @@
 			package = E2AB95652796153E0047B9BB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseFirestoreSwift-Beta";
 		};
-		E2E39E6B27A4A18100C1638E /* SwiftUICharts */ = {
+		E2E39E7027A5E45A00C1638E /* SwiftPieChart */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E2E39E6A27A4A18000C1638E /* XCRemoteSwiftPackageReference "ChartView" */;
-			productName = SwiftUICharts;
+			package = E2E39E6F27A5E45900C1638E /* XCRemoteSwiftPackageReference "SwiftPieChart" */;
+			productName = SwiftPieChart;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -20,7 +20,6 @@ case investmentReturn
 case food
 case entertainment
 case living
-case investment
 case car
 case phone
 case medical
@@ -36,10 +35,10 @@ case error
         case .food: return "Food"
         case .entertainment: return "Entertainment"
         case .living: return "Living"
-        case .investment: return "Investment"
         case .car: return "Car"
         case .phone: return "Phone"
         case .medical: return "Medical"
+            
         case .error: return "Error"
         }
     }
@@ -53,7 +52,6 @@ case error
         case "Food": return .food
         case "Entertainment": return .entertainment
         case "Living": return .living
-        case "Investment": return .investment
         case "Car": return .car
         case "Phone": return .phone
         case "Medical": return .medical
@@ -75,8 +73,6 @@ case error
             return (icon: "tv.circle.fill", background: Color.orange)
         case .living:
             return (icon: "house.circle.fill", background: Color.purple)
-        case .investment:
-            return (icon: "arrow.down.circle.fill", background: Color.red)
         case .car:
             return (icon: "car.circle.fill", background: Color.gray)
         case .phone:

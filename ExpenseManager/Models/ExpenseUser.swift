@@ -16,5 +16,5 @@ struct ExpenseUser {
 }
 
 extension ExpenseUser {
-    static let sample: ExpenseUser = ExpenseUser(uid: "123", name: "Test Name", email: "testemail@email.com", transactions: [Transaction]())
+    static let sample: ExpenseUser = ExpenseUser(uid: "123", name: "Test Name", email: "testemail@email.com", transactions: Transaction.sample)
 }

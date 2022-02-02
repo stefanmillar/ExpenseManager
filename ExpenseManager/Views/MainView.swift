@@ -23,7 +23,12 @@ struct MainView: View {
             
             AddTransactionView(user: self.$user)
                 .tabItem {
-                    Label("", systemImage: "plus.app")
+                    Label("New", systemImage: "plus.app")
+                }
+            
+            InsightsView(user: self.$user)
+                .tabItem {
+                    Label("Insights", systemImage: "chart.line.uptrend.xyaxis")
                 }
             
             ProfileView(user: self.$user, isAuthenticated: self.$isAuthenticated)
@@ -31,10 +36,6 @@ struct MainView: View {
                     Label("Profile", systemImage: "person")
                 }
             
-            InsightsView(user: self.$user)
-                .tabItem {
-                    Label("Insights", systemImage: "chart.line.uptrend.xyaxis")
-                }
         }
         .task {
             let firebase = FirebaseDB()
